@@ -33,7 +33,7 @@ public class HealthBarSystem : MonoBehaviour, IDamageable
 
         if (_currentHealth <= 0)
         {
-            OnDeath?.Invoke();
+            OnDeath?.Invoke(); 
         }
     }
 

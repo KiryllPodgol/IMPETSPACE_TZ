@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour
+public class SceneController : MonoBehaviour
 {
     [SerializeField] private GameObject characterPrefab;
     [SerializeField] private Transform playerSpawnPoint;
@@ -9,37 +10,20 @@ public class GameController : MonoBehaviour
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private Transform keyPoint;
     [SerializeField] private KeyController keyController;
+    private HealthBarSystem _healthSystem;
 
     private void Awake()
     {
-        if (characterPrefab == null)
+        if (characterPrefab == null || playerSpawnPoint == null || healPackPrefab == null || keyPoint == null)
         {
-            Debug.LogError("Character prefab is not assigned!");
+            Debug.LogError("One or more required fields are not assigned!");
             return;
         }
 
-        if (playerSpawnPoint == null)
-        {
-            Debug.LogError("Player spawn point is not assigned!");
-            return;
-        }
-
-        if (healPackPrefab == null)
-        {
-            Debug.LogError("Heal pack prefab is not assigned!");
-            return;
-        }
-
-        if (keyPoint == null)
-        {
-            Debug.LogError("Key point is not assigned!");
-            return;
-        }
-        
         GameObject character = Instantiate(characterPrefab, playerSpawnPoint.position, Quaternion.identity);
         SetupCharacter(character);
         SpawnHealPack();
-        
+
         if (keyController != null)
         {
             keyController.Start();
@@ -49,18 +33,12 @@ public class GameController : MonoBehaviour
             Debug.LogError("KeyController is not assigned!");
         }
     }
-    
+
     private void SpawnHealPack()
     {
-        if (healPackPrefab == null)
+        if (healPackPrefab == null || healPackPoint == null)
         {
-            Debug.LogError("Heal pack prefab is not assigned!");
-            return;
-        }
-
-        if (healPackPoint == null)
-        {
-            Debug.LogError("Heal point is not assigned!");
+            Debug.LogError("Heal pack prefab or heal point is not assigned!");
             return;
         }
 
@@ -70,7 +48,7 @@ public class GameController : MonoBehaviour
     private void SetupCharacter(GameObject character)
     {
         Character characterScript = character.GetComponent<Character>();
-        
+
         if (characterScript == null)
         {
             Debug.LogError("Character script not found on prefab!");
@@ -80,6 +58,43 @@ public class GameController : MonoBehaviour
         characterScript.Initialize(respawnPoint);
 
         SetupCamera(character.transform);
+
+        // Правильно разместим этот код внутри метода
+        HealthBarSystem healthSystem = character.GetComponentInChildren<HealthBarSystem>();
+        if (healthSystem != null)
+        {
+            _healthSystem = healthSystem;
+            _healthSystem.OnDeath += HandlePlayerDeath;
+        }
+        else
+        {
+            Debug.LogError("Health System missing!");
+        }
+    }
+
+    private void HandlePlayerDeath()
+    {
+        Debug.Log("Player died! Restarting scene...");
+
+        if (_healthSystem != null)
+        {
+            _healthSystem.OnDeath -= HandlePlayerDeath;
+        }
+
+       RestartScene();
+    }
+
+    private void OnDestroy()
+    {
+        if (_healthSystem != null)
+        {
+            _healthSystem.OnDeath -= HandlePlayerDeath;
+        }
+    }
+
+    private void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void SetupCamera(Transform target)
@@ -93,7 +108,7 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                Debug.LogError("CameraControl script not found on Main Camera!");
+                Debug.LogError("Camera script not found on Main Camera!");
             }
         }
     }

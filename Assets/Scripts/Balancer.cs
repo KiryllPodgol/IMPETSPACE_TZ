@@ -36,7 +36,7 @@ public class Balancer : MonoBehaviour
 
 
                 characterRb.AddForce(direction * force, ForceMode2D.Impulse);
-                HealthBarSystem healthSystem = character.GetComponent<HealthBarSystem>();
+                HealthBarSystem healthSystem = character.GetComponentInChildren<HealthBarSystem>();
                 if (healthSystem != null)
                 {
                     healthSystem.TakeDamage(1);

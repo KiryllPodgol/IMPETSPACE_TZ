@@ -58,7 +58,7 @@ public class ShootingMonster : Unit
             }
             else
             {
-                HealthBarSystem healthSystem = character.GetComponent<HealthBarSystem>();
+                HealthBarSystem healthSystem = character.GetComponentInChildren<HealthBarSystem>();
                 if (healthSystem != null)
                 {
                     healthSystem.TakeDamage(1); 
