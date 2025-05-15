@@ -1,16 +1,25 @@
 using UnityEngine;
 
-public class healpack : MonoBehaviour
+public class Healpack : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Character character = collider.GetComponent<Character>();
-
-        if (character)
+        
+        if (character != null)
         {
-            HealthBarSystem healthSystem = character.GetComponent<HealthBarSystem>();
-            healthSystem.Heal(1);
-            Destroy(gameObject); 
+            
+            HealthBarSystem healthSystem = character.GetComponentInChildren<HealthBarSystem>();
+            
+            if (healthSystem != null)
+            {
+                healthSystem.Heal(1);
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.LogError("HealthBarSystem not found on Character or its children!");
+            }
         }
     }
 }

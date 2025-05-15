@@ -40,6 +40,7 @@ public class HealthBarSystem : MonoBehaviour, IDamageable
     public void Heal(int amount)
     {
         _currentHealth = Mathf.Min(_currentHealth + amount, _maxHealth);
+        Debug.Log($"Healed! Current health: {_currentHealth}"); 
         OnHealthChanged?.Invoke(_currentHealth);
     }
 
