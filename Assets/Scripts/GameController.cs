@@ -26,11 +26,7 @@ public class SceneController : MonoBehaviour
 
         if (keyController != null)
         {
-            keyController.Start();
-        }
-        else
-        {
-            Debug.LogError("KeyController is not assigned!");
+        Debug.Log("keycontroller is not assigned");
         }
     }
 

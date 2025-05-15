@@ -50,11 +50,11 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D boxCollider2D)
     {
-        Unit unit = boxCollider2D.GetComponent<Unit>();
+        Character character = boxCollider2D.GetComponent<Character>();
 
-        if (unit && unit.gameObject != _parent)
+        if (character && character.gameObject != _parent)
         {
-            HealthBarSystem health = unit.GetComponentInChildren<HealthBarSystem>();
+            HealthBarSystem health = character.GetComponentInChildren<HealthBarSystem>();
 
             if (health != null)
             {
@@ -62,7 +62,7 @@ public class Bullet : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("HealthBarSystem не найден на " + unit.name);
+                Debug.LogWarning("HealthBarSystem не найден на " + character.name);
             }
 
             Destroy(gameObject);
