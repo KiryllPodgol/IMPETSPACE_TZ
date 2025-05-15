@@ -21,12 +21,16 @@ public class Healpack : MonoBehaviour
         {
             
             HealthBarSystem healthSystem = character.GetComponentInChildren<HealthBarSystem>();
-            
             if (healthSystem != null)
             {
-                healthSystem.Heal(1);
-                HealpackAudio.Play();
-                Destroy(gameObject, HealpackAudio.clip.length);
+               
+                if (healthSystem.CurrentHealth < healthSystem.MaxHealth)
+                {
+                    healthSystem.Heal(1);
+                    HealpackAudio.Play();
+                    Destroy(gameObject, HealpackAudio.clip.length);
+                }
+               
             }
             else
             {
