@@ -3,6 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private GameObject _parent;
+
     public GameObject Parent
     {
         set => _parent = value;
@@ -11,6 +12,7 @@ public class Bullet : MonoBehaviour
 
     private float _speed = 10.0F;
     private Vector3 _direction;
+
     public Vector3 Direction
     {
         set => _direction = value.normalized;
@@ -35,10 +37,10 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject, _lifetime);
 
-      
+
         if (_rigidbody != null)
         {
-            _rigidbody.linearVelocity = _direction * _speed; 
+            _rigidbody.linearVelocity = _direction * _speed;
         }
         else
         {
@@ -52,8 +54,18 @@ public class Bullet : MonoBehaviour
 
         if (unit && unit.gameObject != _parent)
         {
+            HealthBarSystem health = unit.GetComponentInChildren<HealthBarSystem>();
+
+            if (health != null)
+            {
+                health.TakeDamage(1);
+            }
+            else
+            {
+                Debug.LogWarning("HealthBarSystem не найден на " + unit.name);
+            }
+
             Destroy(gameObject);
-            unit.ReceiveDamage();
         }
     }
 }

@@ -42,7 +42,7 @@ public class ShootingMonster : Unit
         Bullet bullet = collider.GetComponent<Bullet>();
         if (bullet && bullet.Parent != gameObject)
         {
-            ReceiveDamage();
+            ReceiveDamage(); //тут надо заменить но пока не понимаю как 
             Destroy(bullet.gameObject);
             return;
         }

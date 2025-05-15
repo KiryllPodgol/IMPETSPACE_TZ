@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="997026be-7dad-4912-b619-545ecd4d3c8b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.IMPET_TZ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IMPET_TZ/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Balancer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Balancer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HealthBarSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HealthBarSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SootingMonster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SootingMonster.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1747305982319</updated>
       <workItem from="1747305984142" duration="737000" />
-      <workItem from="1747307071372" duration="2835000" />
+      <workItem from="1747307071372" duration="4413000" />
     </task>
     <servers />
   </component>
