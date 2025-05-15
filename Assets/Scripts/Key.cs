@@ -1,8 +1,20 @@
+using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Key : MonoBehaviour
 {
+    AudioSource keySound;
     private KeyController keyController;
+
+    private void Awake()
+    {
+        if (!TryGetComponent(out keySound))
+        {
+            keySound = gameObject.AddComponent<AudioSource>();
+            Debug.LogWarning("AudioSource not found on Key. Adding one automatically.");
+        }
+    }
 
     public void SetController(KeyController controller)
     {
@@ -15,7 +27,8 @@ public class Key : MonoBehaviour
         if (character != null)
         {
             keyController.AddKey();
-            Destroy(gameObject);
+            keySound.Play();
+            Destroy(gameObject, keySound.clip.length);
         }
     }
 }

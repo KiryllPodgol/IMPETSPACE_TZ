@@ -1,7 +1,18 @@
+using System;
 using UnityEngine;
 
 public class Healpack : MonoBehaviour
 {
+    private void Awake()
+    {
+        if (!TryGetComponent(out HealpackAudio))
+        {
+            HealpackAudio = gameObject.AddComponent<AudioSource>();
+            Debug.Log("AudioSource not found on Key. Adding one automatically.");
+        }
+    }
+
+    AudioSource HealpackAudio;
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Character character = collider.GetComponent<Character>();
@@ -14,7 +25,8 @@ public class Healpack : MonoBehaviour
             if (healthSystem != null)
             {
                 healthSystem.Heal(1);
-                Destroy(gameObject);
+                HealpackAudio.Play();
+                Destroy(gameObject, HealpackAudio.clip.length);
             }
             else
             {
