@@ -8,7 +8,7 @@ public class Spikes : MonoBehaviour
 
         if (character)
         {
-            HealthBarSystem healthSystem = character.GetComponent<HealthBarSystem>();
+            HealthBarSystem healthSystem = character.GetComponentInChildren<HealthBarSystem>();
             healthSystem.TakeDamage(1);
         }
     }
