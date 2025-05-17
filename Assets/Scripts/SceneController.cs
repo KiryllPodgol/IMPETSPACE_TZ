@@ -74,13 +74,13 @@ public class SceneController : MonoBehaviour
 
     private void HandlePlayerDeath()
     {
-        Debug.Log("Player died! Restarting scene...");
+        // Debug.Log("Player died! Restarting scene...");
 
         if (_healthSystem != null)
         {
             _healthSystem.OnDeath -= HandlePlayerDeath;
         }
-
+        
        RestartScene();
     }
 

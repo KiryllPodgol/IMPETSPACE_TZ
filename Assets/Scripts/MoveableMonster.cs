@@ -8,8 +8,6 @@ public class MovedRobot : Unit
     public float visionRadius = 5.0F;
     public LayerMask groundLayer;
     public Animator animator;
-
-
     private int currentPointIndex = 0;
     private bool isWaiting = false;
     private Rigidbody2D rb;
@@ -43,11 +41,11 @@ public class MovedRobot : Unit
             if (Mathf.Abs(character.transform.position.x - transform.position.x) < 0.3F &&
                 character.transform.position.y > transform.position.y)
             {
-                Destroy(gameObject);
+                Die();
             }
             else
             {
-                HealthBarSystem healthSystem = character.GetComponent<HealthBarSystem>();
+                HealthBarSystem healthSystem = character.GetComponentInChildren<HealthBarSystem>();
                 if (healthSystem != null)
                 {
                     healthSystem.TakeDamage(1); 
@@ -75,7 +73,6 @@ public class MovedRobot : Unit
             OnStopMoving();
         }
     }
-
     private IEnumerator WaitAtPoint()
     {
         OnStopMoving();

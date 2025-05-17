@@ -31,7 +31,7 @@ public class Door : MonoBehaviour
         if (_doorSprite != null)
             _doorSprite.color = Color.green;
 
-        Debug.Log("Door unlocked!");
+        // Debug.Log("Door unlocked!");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -41,7 +41,7 @@ public class Door : MonoBehaviour
 
         if (other.GetComponent<Character>() != null)
         {
-            Debug.Log("Player entered the door!");
+            // Debug.Log("Player entered the door!");
             OnDoorEntered?.Invoke();
         }
     }

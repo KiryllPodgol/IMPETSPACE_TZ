@@ -42,7 +42,7 @@ public class ShootingMonster : Unit
         Bullet bullet = collider.GetComponent<Bullet>();
         if (bullet && bullet.Parent != gameObject)
         {
-            ReceiveDamage(); //тут надо заменить но пока не понимаю как 
+            ReceiveDamage(); 
             Destroy(bullet.gameObject);
             return;
         }
@@ -53,7 +53,7 @@ public class ShootingMonster : Unit
             if (Mathf.Abs(character.transform.position.x - transform.position.x) < 0.3F &&
                 character.transform.position.y > transform.position.y)
             {
-                Destroy(gameObject);
+                Die();
 
             }
             else
