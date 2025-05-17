@@ -1,4 +1,4 @@
-using System;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -94,7 +94,7 @@ public class SceneController : MonoBehaviour
             _door.OnDoorEntered -= RestartScene;
     }
 
-    private void RestartScene()
+    public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
