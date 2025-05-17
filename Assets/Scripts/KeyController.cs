@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 
 public class KeyController : MonoBehaviour
 {
     [SerializeField] private KeyModel keyModel;
     [SerializeField] private KeyView keyView;
+    
+    public event Action OnAllKeysCollected;
 
     public void Start()
     {
@@ -15,7 +18,15 @@ public class KeyController : MonoBehaviour
     {
         keyModel.keysCollected++;
         UpdateKeysView();
+        
+        if (keyModel.keysCollected >= keyModel.keysRequired) 
+        {
+            OnAllKeysCollected?.Invoke();
+            Debug.Log("All Keys Collected");
+        }
     }
+
+    
 
     private void UpdateKeysView()
     {

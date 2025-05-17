@@ -1250,6 +1250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyModel:
     keysCollected: 0
+    keysRequired: 0
     keyPrefab: {fileID: 6634263778812344023, guid: 921f154173544cb4895349565266f057, type: 3}
     keySpawnPoints:
     - {fileID: 1021440454}
@@ -8318,6 +8319,8 @@ MonoBehaviour:
   respawnPoint: {fileID: 1364074682}
   keyPoint: {fileID: 293482492}
   keyController: {fileID: 293482491}
+  _doorTrigger: {fileID: 1240386241}
+  _doorSprite: {fileID: 1240386242}
 --- !u!4 &2097388789
 Transform:
   m_ObjectHideFlags: 0
@@ -8521,6 +8524,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootingMonster
       objectReference: {fileID: 0}
+    - target: {fileID: 1467667332023454411, guid: f930197e459af674c95b9259da14e6f8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5061334446190684979, guid: f930197e459af674c95b9259da14e6f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.538
@@ -8561,6 +8568,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8604597023328928201, guid: f930197e459af674c95b9259da14e6f8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8577,6 +8588,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2734578645586585870, guid: 62aa25891efcec04b8c2d4e12d25a8bb, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2738661254371284804, guid: 62aa25891efcec04b8c2d4e12d25a8bb, type: 3}
       propertyPath: 'points.Array.data[0]'
       value: 
@@ -8592,6 +8607,10 @@ PrefabInstance:
     - target: {fileID: 4811853291030895428, guid: 62aa25891efcec04b8c2d4e12d25a8bb, type: 3}
       propertyPath: m_Name
       value: MoveableRobot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4811853291030895428, guid: 62aa25891efcec04b8c2d4e12d25a8bb, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5079678291198589313, guid: 62aa25891efcec04b8c2d4e12d25a8bb, type: 3}
       propertyPath: m_LocalPosition.x

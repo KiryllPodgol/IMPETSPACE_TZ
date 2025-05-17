@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,9 @@ public class SceneController : MonoBehaviour
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private Transform keyPoint;
     [SerializeField] private KeyController keyController;
+    [SerializeField] private Collider2D _doorTrigger;  
+    [SerializeField] private SpriteRenderer _doorSprite;
+    private bool _isDoorUnlocked;
     private HealthBarSystem _healthSystem;
 
     private void Awake()
@@ -25,8 +29,27 @@ public class SceneController : MonoBehaviour
         SpawnHealPack();
 
         if (keyController != null)
+        { 
+            keyController.OnAllKeysCollected += UnlockDoor;
+        }
+        _doorTrigger.enabled = false;
+        if (_doorSprite != null)
+            _doorSprite.color = Color.red;
+    }
+    private void UnlockDoor()
+    {
+        _isDoorUnlocked = true;
+        _doorTrigger.enabled = true;
+        
+        if (_doorSprite != null)
+            _doorSprite.color = Color.green; 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (_isDoorUnlocked && other.TryGetComponent<Character>(out _))
         {
-        Debug.Log("keycontroller is not assigned");
+            RestartScene();
         }
     }
 
@@ -54,8 +77,7 @@ public class SceneController : MonoBehaviour
         characterScript.Initialize(respawnPoint);
 
         SetupCamera(character.transform);
-
-        // Правильно разместим этот код внутри метода
+        
         HealthBarSystem healthSystem = character.GetComponentInChildren<HealthBarSystem>();
         if (healthSystem != null)
         {
@@ -85,6 +107,11 @@ public class SceneController : MonoBehaviour
         if (_healthSystem != null)
         {
             _healthSystem.OnDeath -= HandlePlayerDeath;
+        }
+        
+        if (keyController != null)
+        {
+            keyController.OnAllKeysCollected -= UnlockDoor;
         }
     }
 
