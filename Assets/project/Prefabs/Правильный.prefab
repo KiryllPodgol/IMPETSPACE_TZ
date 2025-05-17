@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8462581937333144168}
   - component: {fileID: 8668972958687367691}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4938406069193763831}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,9 +131,9 @@ GameObject:
   - component: {fileID: 5350365150036306163}
   - component: {fileID: 5149216524626046754}
   - component: {fileID: 8459631494868616425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "\u041F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439"
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -373,8 +373,16 @@ PrefabInstance:
       value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 1349369882603726145, guid: aca18effe06cad9469b0b6c6a4a5e8f3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349369882603726145, guid: aca18effe06cad9469b0b6c6a4a5e8f3, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820865199458122080, guid: aca18effe06cad9469b0b6c6a4a5e8f3, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2079994658745362362, guid: aca18effe06cad9469b0b6c6a4a5e8f3, type: 3}
       propertyPath: m_AnchorMax.y
@@ -391,6 +399,10 @@ PrefabInstance:
     - target: {fileID: 2079994658745362362, guid: aca18effe06cad9469b0b6c6a4a5e8f3, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378798521569429081, guid: aca18effe06cad9469b0b6c6a4a5e8f3, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3378798521569429081, guid: aca18effe06cad9469b0b6c6a4a5e8f3, type: 3}
       propertyPath: m_IsActive
@@ -415,6 +427,14 @@ PrefabInstance:
     - target: {fileID: 6110886318054287914, guid: aca18effe06cad9469b0b6c6a4a5e8f3, type: 3}
       propertyPath: m_Name
       value: HealtBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110886318054287914, guid: aca18effe06cad9469b0b6c6a4a5e8f3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183987586535391465, guid: aca18effe06cad9469b0b6c6a4a5e8f3, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9183987586535391465, guid: aca18effe06cad9469b0b6c6a4a5e8f3, type: 3}
       propertyPath: m_IsActive

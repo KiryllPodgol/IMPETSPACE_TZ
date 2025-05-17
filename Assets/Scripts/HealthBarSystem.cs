@@ -24,7 +24,7 @@ public class HealthBarSystem : MonoBehaviour, IDamageable
     {
         _currentHealth = _maxHealth;
         _healthBar = GetComponentInChildren<HealthBar>();
-        _characterSpriteRenderer = GetComponentInParent<Character>()?.GetComponent<SpriteRenderer>();
+        _characterSpriteRenderer = GetComponentInParent<Character>()?.GetComponentInChildren<SpriteRenderer>();
 
         if (_characterSpriteRenderer != null)
         {
@@ -51,6 +51,7 @@ public class HealthBarSystem : MonoBehaviour, IDamageable
         }
         else
         {
+            
             _isInvincible = true;
             StartCoroutine(Invulnerability());
         }
@@ -70,8 +71,9 @@ public class HealthBarSystem : MonoBehaviour, IDamageable
     }
 
     private IEnumerator Invulnerability()
-    {
-        Physics2D.IgnoreLayerCollision(10, 11, true);
+    { 
+        
+        Physics2D.IgnoreLayerCollision(6, 7, true);
 
         if (_characterSpriteRenderer != null && iFramesDuration > 0)
         {
@@ -90,7 +92,7 @@ public class HealthBarSystem : MonoBehaviour, IDamageable
             yield return new WaitForSeconds(iFramesDuration);
         }
 
-        Physics2D.IgnoreLayerCollision(10, 11, false);
+        Physics2D.IgnoreLayerCollision(6, 7, false);
         _isInvincible = false;
     }
 }
