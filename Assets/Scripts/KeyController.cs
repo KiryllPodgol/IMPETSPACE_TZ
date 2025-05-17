@@ -10,6 +10,7 @@ public class KeyController : MonoBehaviour
 
     public void Start()
     {
+        Debug.Log($"Required keys: {keyModel.keysRequired}");
         SpawnKeys();
         UpdateKeysView();
     }

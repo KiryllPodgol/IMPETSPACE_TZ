@@ -1250,7 +1250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyModel:
     keysCollected: 0
-    keysRequired: 0
+    keysRequired: 3
     keyPrefab: {fileID: 6634263778812344023, guid: 921f154173544cb4895349565266f057, type: 3}
     keySpawnPoints:
     - {fileID: 1021440454}
