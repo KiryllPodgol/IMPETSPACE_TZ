@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="997026be-7dad-4912-b619-545ecd4d3c8b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.IMPET_TZ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IMPET_TZ/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeathScreen.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeathScreen.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Door.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/project/Prefabs/Правильный.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/project/Prefabs/Правильный.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +99,7 @@
       <workItem from="1747470640676" duration="1085000" />
       <workItem from="1747472824294" duration="3513000" />
       <workItem from="1747476968265" duration="1174000" />
-      <workItem from="1747483207763" duration="1101000" />
+      <workItem from="1747483207763" duration="1714000" />
     </task>
     <servers />
   </component>

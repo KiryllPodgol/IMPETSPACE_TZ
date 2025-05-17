@@ -486,8 +486,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 3
-  iFramesDuration: 2
-  _numberOfFlashes: 3
+  iFramesDuration: 1.4
+  _numberOfFlashes: 2
 --- !u!1 &2625695780937601518 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9183987586535391465, guid: aca18effe06cad9469b0b6c6a4a5e8f3, type: 3}
