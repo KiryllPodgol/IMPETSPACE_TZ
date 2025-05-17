@@ -7,6 +7,7 @@
     <list default="true" id="997026be-7dad-4912-b619-545ecd4d3c8b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.IMPET_TZ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IMPET_TZ/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/KeyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/KeyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +16,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Door.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -94,7 +98,7 @@
       <workItem from="1747329398472" duration="12634000" />
       <workItem from="1747467590845" duration="2988000" />
       <workItem from="1747470640676" duration="1085000" />
-      <workItem from="1747472824294" duration="754000" />
+      <workItem from="1747472824294" duration="3378000" />
     </task>
     <servers />
   </component>

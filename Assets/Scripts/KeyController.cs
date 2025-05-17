@@ -10,7 +10,7 @@ public class KeyController : MonoBehaviour
 
     public void Start()
     {
-        Debug.Log($"Required keys: {keyModel.keysRequired}");
+        // Debug.Log($"Required keys: {keyModel.keysRequired}");
         SpawnKeys();
         UpdateKeysView();
     }
@@ -23,7 +23,7 @@ public class KeyController : MonoBehaviour
         if (keyModel.keysCollected >= keyModel.keysRequired) 
         {
             OnAllKeysCollected?.Invoke();
-            Debug.Log("All Keys Collected");
+            // Debug.Log("All Keys Collected");
         }
     }
 

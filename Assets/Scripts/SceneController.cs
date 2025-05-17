@@ -10,9 +10,8 @@ public class SceneController : MonoBehaviour
     [SerializeField] private Transform healPackPoint;
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private Transform keyPoint;
-    [SerializeField] private KeyController keyController;
-    [SerializeField] private Collider2D _doorTrigger;  
-    [SerializeField] private SpriteRenderer _doorSprite;
+    [SerializeField] private Door _door;
+  
     private bool _isDoorUnlocked;
     private HealthBarSystem _healthSystem;
 
@@ -23,34 +22,17 @@ public class SceneController : MonoBehaviour
             Debug.LogError("One or more required fields are not assigned!");
             return;
         }
+        
+        if (_door == null)
+        {
+            Debug.LogWarning("Door reference is not assigned in SceneController!");
+        }
 
         GameObject character = Instantiate(characterPrefab, playerSpawnPoint.position, Quaternion.identity);
         SetupCharacter(character);
         SpawnHealPack();
-
-        if (keyController != null)
-        { 
-            keyController.OnAllKeysCollected += UnlockDoor;
-        }
-        _doorTrigger.enabled = false;
-        if (_doorSprite != null)
-            _doorSprite.color = Color.red;
-    }
-    private void UnlockDoor()
-    {
-        _isDoorUnlocked = true;
-        _doorTrigger.enabled = true;
-        
-        if (_doorSprite != null)
-            _doorSprite.color = Color.green; 
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (_isDoorUnlocked && other.TryGetComponent<Character>(out _))
-        {
-            RestartScene();
-        }
+        if (_door != null)
+            _door.OnDoorEntered += RestartScene;
     }
 
     private void SpawnHealPack()
@@ -108,11 +90,8 @@ public class SceneController : MonoBehaviour
         {
             _healthSystem.OnDeath -= HandlePlayerDeath;
         }
-        
-        if (keyController != null)
-        {
-            keyController.OnAllKeysCollected -= UnlockDoor;
-        }
+        if (_door != null)
+            _door.OnDoorEntered -= RestartScene;
     }
 
     private void RestartScene()
