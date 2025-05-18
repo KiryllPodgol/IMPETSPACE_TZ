@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 3
-  iFramesDuration: 1.4
+  iFramesDuration: 1.6
   _numberOfFlashes: 2
 --- !u!1 &2625695780937601518 stripped
 GameObject:

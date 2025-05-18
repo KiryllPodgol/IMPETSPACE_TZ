@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,7 +10,7 @@ public class SceneController : MonoBehaviour
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private Transform keyPoint;
     [SerializeField] private Door _door;
-  
+
     private bool _isDoorUnlocked;
     private HealthBarSystem _healthSystem;
 
@@ -22,7 +21,7 @@ public class SceneController : MonoBehaviour
             Debug.LogError("One or more required fields are not assigned!");
             return;
         }
-        
+
         if (_door == null)
         {
             Debug.LogWarning("Door reference is not assigned in SceneController!");
@@ -57,9 +56,8 @@ public class SceneController : MonoBehaviour
         }
 
         characterScript.Initialize(respawnPoint);
-
         SetupCamera(character.transform);
-        
+
         HealthBarSystem healthSystem = character.GetComponentInChildren<HealthBarSystem>();
         if (healthSystem != null)
         {
@@ -70,33 +68,6 @@ public class SceneController : MonoBehaviour
         {
             Debug.LogError("Health System missing!");
         }
-    }
-
-    private void HandlePlayerDeath()
-    {
-        // Debug.Log("Player died! Restarting scene...");
-
-        if (_healthSystem != null)
-        {
-            _healthSystem.OnDeath -= HandlePlayerDeath;
-        }
-        
-       RestartScene();
-    }
-
-    private void OnDestroy()
-    {
-        if (_healthSystem != null)
-        {
-            _healthSystem.OnDeath -= HandlePlayerDeath;
-        }
-        if (_door != null)
-            _door.OnDoorEntered -= RestartScene;
-    }
-
-    public void RestartScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void SetupCamera(Transform target)
@@ -113,5 +84,31 @@ public class SceneController : MonoBehaviour
                 Debug.LogError("Camera script not found on Main Camera!");
             }
         }
+    }
+
+    private void HandlePlayerDeath()
+    {
+        if (_healthSystem != null)
+        {
+            _healthSystem.OnDeath -= HandlePlayerDeath;
+        }
+
+        RestartScene();
+    }
+
+    private void OnDestroy()
+    {
+        if (_healthSystem != null)
+        {
+            _healthSystem.OnDeath -= HandlePlayerDeath;
+        }
+
+        if (_door != null)
+            _door.OnDoorEntered -= RestartScene;
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
