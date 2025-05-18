@@ -12,7 +12,7 @@ public class Character : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float _moveSpeed = 5f;
     [SerializeField] private float _jumpForce = 15f;
-
+    AudioSource _JumpSound;
     private InputAsset _input;
     private Transform _respawnPoint;
     private bool _isGrounded;
@@ -37,7 +37,17 @@ public class Character : MonoBehaviour
             {
                 Debug.LogError("Animator component not found on the character.");
             }
+            if (_JumpSound == null)
+            {
+                _JumpSound= GetComponent<AudioSource>();
+                if (_JumpSound == null)
+                {
+                    _JumpSound = gameObject.AddComponent<AudioSource>();
+                    Debug.LogWarning("AudioSource component was added automatically");
+                }
+            }
         }
+        
 
         if (_sprite == null)
         {
@@ -68,6 +78,7 @@ public class Character : MonoBehaviour
         {
             _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
             State = CharState.Jump;
+            _JumpSound.PlayOneShot(_JumpSound.clip);
         }
     }
 

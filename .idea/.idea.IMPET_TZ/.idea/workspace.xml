@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="997026be-7dad-4912-b619-545ecd4d3c8b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.IMPET_TZ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IMPET_TZ/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraControll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraControll.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/project/Prefabs/Правильный.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/project/Prefabs/Правильный.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +103,8 @@
       <workItem from="1747476968265" duration="1174000" />
       <workItem from="1747483207763" duration="2008000" />
       <workItem from="1747556302646" duration="642000" />
-      <workItem from="1747562399207" duration="1808000" />
+      <workItem from="1747562399207" duration="2133000" />
+      <workItem from="1747564585717" duration="647000" />
     </task>
     <servers />
   </component>
