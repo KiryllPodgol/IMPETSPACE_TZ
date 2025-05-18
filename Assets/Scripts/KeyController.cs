@@ -31,7 +31,7 @@ public class KeyController : MonoBehaviour
 
     private void UpdateKeysView()
     {
-        keyView.UpdateKeysCount(keyModel.keysCollected);
+        keyView.UpdateKeysCount(keyModel.keysCollected, keyModel.keysRequired);
     }
 
     private void SpawnKeys()
